@@ -1,0 +1,44 @@
+{
+  "model_name": "Pneumonia Detection Model",
+  "version": "1.0",
+  "date_trained": "2026-01-29 15:15:38",
+  "framework": "TensorFlow/Keras",
+  "base_architecture": "ResNet50",
+  "input_size": [
+    224,
+    224,
+    3
+  ],
+  "output": "Binary (0=Normal, 1=Pneumonia)",
+  "thresholds": {
+    "clinical": 0.43,
+    "high_confidence": 0.7,
+    "low_confidence": 0.3
+  },
+  "performance": {
+    "test_accuracy": 0.8605769230769231,
+    "test_sensitivity": 0.9615384615384616,
+    "test_specificity": 0.6923076923076923,
+    "test_auc": 0.9228139381985536,
+    "test_precision": 0.8389261744966443
+  },
+  "training_config": {
+    "epochs_initial": 25,
+    "epochs_finetuned": 10,
+    "batch_size": 32,
+    "class_weights": {
+      "0": 1.9448173005219984,
+      "1": 0.6730322580645162
+    }
+  },
+  "class_distribution": {
+    "train": {
+      "normal": 1341,
+      "pneumonia": 3875
+    },
+    "test": {
+      "normal": 234,
+      "pneumonia": 390
+    }
+  }
+}
