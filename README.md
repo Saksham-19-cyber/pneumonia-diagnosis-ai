@@ -44,9 +44,8 @@ This project uses chest X-ray images for binary classification:
 - **Class 0**: Normal (healthy lungs)
 - **Class 1**: Pneumonia
 
-### Recommended Datasets
+### Recommended Dataset
 - [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) on Kaggle
-- [NIH Chest X-rays](https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community)
 
 ## 🚀 Quick Start
 
