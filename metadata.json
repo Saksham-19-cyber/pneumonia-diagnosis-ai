@@ -1,0 +1,64 @@
+{
+  "model_name": "Pneumonia Diagnosis ResNet50",
+  "version": "1.0.0",
+  "created_date": "2026-01-29",
+  "framework": "TensorFlow",
+  "framework_version": "2.x",
+  "architecture": "ResNet50",
+  "base_model": "ResNet50 (ImageNet pre-trained)",
+  "input_shape": [224, 224, 3],
+  "output_classes": 2,
+  "class_names": ["NORMAL", "PNEUMONIA"],
+  "preprocessing": {
+    "resize": [224, 224],
+    "normalization": "rescale_1/255",
+    "augmentation": [
+      "rotation_range: 20",
+      "width_shift_range: 0.2",
+      "height_shift_range: 0.2",
+      "zoom_range: 0.2",
+      "horizontal_flip: True"
+    ]
+  },
+  "training": {
+    "validation_split": 0.15,
+    "batch_size": 32,
+    "epochs_trained": 50,
+    "early_stopping_patience": 10,
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "loss_function": "binary_crossentropy",
+    "class_weights_applied": true
+  },
+  "callbacks": [
+    "ModelCheckpoint",
+    "EarlyStopping",
+    "ReduceLROnPlateau"
+  ],
+  "performance_metrics": {
+    "accuracy": "TBD",
+    "precision": "TBD",
+    "recall": "TBD",
+    "f1_score": "TBD",
+    "auc_roc": "TBD",
+    "specificity": "TBD",
+    "npv": "TBD"
+  },
+  "deployment": {
+    "intended_use": "Pneumonia screening from chest X-rays",
+    "target_environment": "Clinical PACS integration",
+    "regulatory_status": "Research only - not FDA approved",
+    "explainability": "Grad-CAM heatmaps",
+    "clinical_validation": "Required before deployment"
+  },
+  "limitations": [
+    "Model trained on specific dataset distribution",
+    "Requires standardized chest X-ray images",
+    "Not validated on all demographics",
+    "Requires radiologist review for final diagnosis"
+  ],
+  "author": "Your Name",
+  "contact": "your.email@example.com",
+  "license": "MIT",
+  "repository": "https://github.com/yourusername/pneumonia-diagnosis-ai"
+}
